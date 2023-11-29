@@ -60,7 +60,7 @@ class Exp_Main(Exp_Basic):
                 batch_y = batch_y.float()
 
                 batch_x_mark = batch_x_mark.float().to(self.device)
-                batch_y_mark = batch_y_mark.float().to(self.device)
+                batch_y_mark = batch_y_mark.float().to(self.device),
 
                 # decoder input
                 dec_inp = torch.zeros_like(batch_y[:, -self.args.pred_len:, :]).float()
