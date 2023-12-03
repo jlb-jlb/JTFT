@@ -188,6 +188,43 @@ class Dataset_ETT_minute(Dataset):
         return self.scaler.inverse_transform(data)
 
 
+# class Dataset_Custom_EEG(Dataset):
+#     def __init__(self, root_path, flag='train', size=None,
+#                  features='S', data_path='ETTh1.csv',
+#                  target='OT', scale=True, timeenc=0, freq='h'):
+#         # size [seq_len, label_len, pred_len]  
+#         if size==None:
+#             self.seq_len = 24*4*4
+#             self.label_len = 24*4
+#             self.pred_len = 24*4
+#         else:
+#             self.seq_len = size[0]
+#             self.label_len = size[1]
+#             self.pred_len = size[2]
+        
+#         # init
+#         assert flag in ['train', 'test', 'val']
+#         type_map = {'train': 0, 'val': 1, 'test': 2}
+#         self.set_type = type_map[flag]
+
+#         self.features = features
+#         self.target = target
+#         self.scale = scale
+#         self.timeenc = timeenc
+#         self.freq = freq
+
+#         self.root_path = root_path
+#         self.data_path = data_path
+#         self.__read_data__()
+
+#     def __read_data__(self):
+#         self.scaler = StandardScaler()
+#         # raw = 
+#         pass
+
+
+
+
 class Dataset_Custom(Dataset):
     def __init__(self, root_path, flag='train', size=None,
                  features='S', data_path='ETTh1.csv',

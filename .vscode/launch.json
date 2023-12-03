@@ -1,0 +1,61 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Python: Current File",
+            "type": "python",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal",
+            "justMyCode": true,
+            "args": [
+                "--use_huber_loss",
+                "--is_training", "1",
+                // "--root_path", "./dataset/exchange_rate",
+                "--root_path", "./dataset/seizure",
+                // "--data_path", "exchange_rate.csv",
+                "--data_path", "seizure.csv",
+                "--decomposition", "2",
+                "--model_id", "seizure",
+                // "--model_id", "exchange",
+                "--model", "JTFT",
+                "--data", "custom",
+                "--features", "M",
+                "--seq_len", "128",
+                "--pred_len", "96", // Change this value for different pred_len
+                "--gpu", "0",
+                "--enc_in", "8",
+                "--d_compress_max", "1",
+                "--mod_scal_tfi", "0.5",
+                "--n_freq", "16",
+                "--n_concat_td", "32",
+                "--stride", "2",
+                "--d_model", "8",
+                "--e_layers", "3",
+                "--e_layers_tfi", "3",
+                "--d_ff", "32",
+                "--n_heads", "2",
+                "--dropout", "0.1",
+                "--fc_dropout", "0.1",
+                "--head_dropout", "0.1",
+                "--random_seed", "1",
+                "--patch_len", "16",
+                "--des", "Exp",
+                "--b_not_compile",
+                "--train_epochs", "100",
+                "--min_epochs", "1",
+                "--lradj", "constant",
+                "--label_len", "1",
+                "--num_workers", "2",
+                "--patience", "10",
+                "--itr", "1",
+                "--batch_size", "64",
+                "--learning_rate", "0.001"
+            ]
+
+        }
+    ]
+}
